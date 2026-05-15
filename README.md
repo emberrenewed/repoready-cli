@@ -5,7 +5,7 @@
 <p align="center">
   <strong>RepoReady</strong><br>
   Scan a GitHub repo. Learn exactly what your machine is missing. Download only when you are ready.<br>
-  <sub>Created by CodeAhmad</sub>
+  <sub>Created by emberrenewed</sub>
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
   <img alt="CLI only" src="https://img.shields.io/badge/CLI-only-BD93F9?style=for-the-badge">
   <img alt="Terminal UI" src="https://img.shields.io/badge/Terminal_UI-Bubble_Tea-FF79C6?style=for-the-badge">
   <img alt="Safe by default" src="https://img.shields.io/badge/Safe_by_default-confirm_first-F1FA8C?style=for-the-badge">
-  <img alt="License" src="https://img.shields.io/badge/Created_by-CodeAhmad-50FA7B?style=for-the-badge">
+  <img alt="Creator" src="https://img.shields.io/badge/Created_by-emberrenewed-50FA7B?style=for-the-badge">
 </p>
 
 <p align="center">
@@ -180,5 +180,5 @@ go test ./...
 ---
 
 <p align="center">
-  Made with 💜 by CodeAhmad
+  Made with 💜 by emberrenewed
 </p>

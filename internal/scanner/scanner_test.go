@@ -14,7 +14,7 @@ func TestAnalyzeLaravelProject(t *testing.T) {
 	writeFile(t, filepath.Join(root, "package-lock.json"), "")
 	writeFile(t, filepath.Join(root, ".env.example"), "DB_CONNECTION=mysql")
 
-	project, err := Analyze(root, "https://github.com/codeahmad/demo", "codeahmad", "demo")
+	project, err := Analyze(root, "https://github.com/emberrenewed/demo", "emberrenewed", "demo")
 	if err != nil {
 		t.Fatalf("Analyze returned error: %v", err)
 	}
@@ -33,7 +33,7 @@ func TestAnalyzeNodeProjectDetectsTypeScriptAndPnpm(t *testing.T) {
 	writeFile(t, filepath.Join(root, "package.json"), `{"dependencies":{"react":"latest"},"devDependencies":{"typescript":"latest"},"scripts":{"dev":"vite"}}`)
 	writeFile(t, filepath.Join(root, "pnpm-lock.yaml"), "")
 
-	project, err := Analyze(root, "https://github.com/codeahmad/web", "codeahmad", "web")
+	project, err := Analyze(root, "https://github.com/emberrenewed/web", "emberrenewed", "web")
 	if err != nil {
 		t.Fatalf("Analyze returned error: %v", err)
 	}
@@ -51,7 +51,7 @@ func TestAnalyzeDetectsLanguageFromNestedSourceFiles(t *testing.T) {
 	}
 	writeFile(t, filepath.Join(root, "src", "service", "main.py"), "print('hello')")
 
-	project, err := Analyze(root, "https://github.com/codeahmad/python", "codeahmad", "python")
+	project, err := Analyze(root, "https://github.com/emberrenewed/python", "emberrenewed", "python")
 	if err != nil {
 		t.Fatalf("Analyze returned error: %v", err)
 	}

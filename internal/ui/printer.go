@@ -44,13 +44,13 @@ func PrintDiagnosis(project models.ProjectInfo, report models.SystemReport) []mo
 	Section("Diagnosis")
 	if project.MainLanguage == "Unknown" {
 		RunMomentAnimation("thinking")
-		fmt.Println(WarningBox("🌙 UNKNOWN STACK\n\nI scanned the repository files, but I could not confidently detect a supported language yet.\n\nCreated by CodeAhmad"))
+		fmt.Println(WarningBox("🌙 UNKNOWN STACK\n\nI scanned the repository files, but I could not confidently detect a supported language yet.\n\nCreated by emberrenewed"))
 		return missing
 	}
 	if len(missing) == 0 {
 		RunMomentAnimation("ready")
 		fmt.Println(SuccessBox(fmt.Sprintf(
-			"🌸 READY\n\nRepository language: %s\nEvidence: %s\nYour system already has everything this repository needs.\n\nCreated by CodeAhmad",
+			"🌸 READY\n\nRepository language: %s\nEvidence: %s\nYour system already has everything this repository needs.\n\nCreated by emberrenewed",
 			project.MainLanguage,
 			evidenceText(project.LanguageEvidence),
 		)))
@@ -63,7 +63,7 @@ func PrintDiagnosis(project models.ProjectInfo, report models.SystemReport) []mo
 	var message string
 	if runtimeName != "" && hasTool(missing, runtimeName) {
 		message = fmt.Sprintf(
-			"⚠️ PROBLEM FOUND\n\nRepository language: %s\nEvidence: %s\nYour system does not have %s installed.\nYou must download/install: %s\n\nCreated by CodeAhmad",
+			"⚠️ PROBLEM FOUND\n\nRepository language: %s\nEvidence: %s\nYour system does not have %s installed.\nYou must download/install: %s\n\nCreated by emberrenewed",
 			project.MainLanguage,
 			evidenceText(project.LanguageEvidence),
 			runtimeName,
@@ -71,7 +71,7 @@ func PrintDiagnosis(project models.ProjectInfo, report models.SystemReport) []mo
 		)
 	} else {
 		message = fmt.Sprintf(
-			"⚠️ PROBLEM FOUND\n\nRepository language: %s\nEvidence: %s\nYour system is missing: %s\nYou must download/install: %s\n\nCreated by CodeAhmad",
+			"⚠️ PROBLEM FOUND\n\nRepository language: %s\nEvidence: %s\nYour system is missing: %s\nYou must download/install: %s\n\nCreated by emberrenewed",
 			project.MainLanguage,
 			evidenceText(project.LanguageEvidence),
 			strings.Join(names, ", "),
@@ -89,7 +89,7 @@ func PrintError(message, fix string) {
 	if strings.TrimSpace(fix) != "" {
 		content += "\n\nFix: " + fix
 	}
-	content += "\n\nCreated by CodeAhmad"
+	content += "\n\nCreated by emberrenewed"
 	fmt.Println(ErrorBox(content))
 }
 
@@ -114,7 +114,7 @@ func HelpScreen() string {
 		lipgloss.Center,
 		GradientText("🌸 RepoReady", "#FF79C6", "#BD93F9"),
 		SubtitleStyle.Render("Cute GitHub project assistant"),
-		MutedStyle.Render("Created by CodeAhmad"),
+		MutedStyle.Render("Created by emberrenewed"),
 		"",
 		PinkStyle.Render("Usage"),
 		"  repoready https://github.com/user/repo",
@@ -142,11 +142,11 @@ func PrintFixResult(report models.SystemReport) {
 	missing := system.MissingTools(report)
 	if len(missing) == 0 {
 		RunMomentAnimation("ready")
-		fmt.Println(SuccessBox("🌸 FIXED\n\nThe required tools are now available.\n\nCreated by CodeAhmad"))
+		fmt.Println(SuccessBox("🌸 FIXED\n\nThe required tools are now available.\n\nCreated by emberrenewed"))
 		return
 	}
 	RunMomentAnimation("warning")
-	fmt.Println(WarningBox("⚠️ STILL MISSING\n\nSome tools still need manual installation before this repository can run.\n\nCreated by CodeAhmad"))
+	fmt.Println(WarningBox("⚠️ STILL MISSING\n\nSome tools still need manual installation before this repository can run.\n\nCreated by emberrenewed"))
 	fmt.Println()
 	fmt.Println(MissingToolsTable(missing))
 }
@@ -159,7 +159,7 @@ func PrintDownloadOffer(path string) {
 func PrintDownloadSuccess(path string) {
 	Section("Download Complete")
 	RunMomentAnimation("download")
-	fmt.Println(SuccessBox("📦 DOWNLOADED\n\nProject saved to:\n" + path + "\n\nCreated by CodeAhmad"))
+	fmt.Println(SuccessBox("📦 DOWNLOADED\n\nProject saved to:\n" + path + "\n\nCreated by emberrenewed"))
 }
 
 func toolNames(tools []models.ToolStatus) []string {

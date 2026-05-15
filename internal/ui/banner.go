@@ -14,7 +14,7 @@ func Banner() string {
 		lipgloss.Center,
 		GradientText("🌸 RepoReady", "#FF79C6", "#BD93F9"),
 		SubtitleStyle.Render("Cute GitHub project assistant"),
-		MutedStyle.Render("Created by CodeAhmad"),
+		MutedStyle.Render("Created by emberrenewed"),
 	)
 	return BoxStyle.Copy().
 		Width(48).
@@ -24,7 +24,7 @@ func Banner() string {
 
 func Footer() string {
 	line := strings.Repeat("─", 36)
-	return FooterStyle.Render(line + "\nMade with 💜 by CodeAhmad")
+	return FooterStyle.Render(line + "\nMade with 💜 by emberrenewed")
 }
 
 type introTickMsg time.Time
@@ -72,7 +72,7 @@ func (m introModel) View() string {
 		lipgloss.Center,
 		GradientText(flowers[frame]+" RepoReady", "#FF79C6", "#BD93F9"),
 		SubtitleStyle.Render(subtitles[frame]),
-		MutedStyle.Render("Created by CodeAhmad"),
+		MutedStyle.Render("Created by emberrenewed"),
 	)
 	return BoxStyle.Copy().
 		Width(48).
