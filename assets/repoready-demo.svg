@@ -1,0 +1,82 @@
+<svg width="900" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="900" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#282A36"/>
+      <stop offset="1" stop-color="#171923"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="120" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF79C6"/>
+      <stop offset=".55" stop-color="#BD93F9"/>
+      <stop offset="1" stop-color="#8BE9FD"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .step-1 { animation: step1 7s infinite; }
+    .step-2 { animation: step2 7s infinite; }
+    .step-3 { animation: step3 7s infinite; }
+    .step-4 { animation: step4 7s infinite; }
+    .bar { animation: grow 7s infinite; transform-origin: left center; }
+    .ready { animation: ready 7s infinite; }
+    .cursor { animation: blink 1s steps(2, start) infinite; }
+    @keyframes step1 {
+      0%, 20% { fill: #FF79C6; }
+      21%, 100% { fill: #50FA7B; }
+    }
+    @keyframes step2 {
+      0%, 20% { fill: #6272A4; }
+      21%, 42% { fill: #FF79C6; }
+      43%, 100% { fill: #50FA7B; }
+    }
+    @keyframes step3 {
+      0%, 42% { fill: #6272A4; }
+      43%, 64% { fill: #FF79C6; }
+      65%, 100% { fill: #50FA7B; }
+    }
+    @keyframes step4 {
+      0%, 64% { fill: #6272A4; }
+      65%, 86% { fill: #FF79C6; }
+      87%, 100% { fill: #50FA7B; }
+    }
+    @keyframes grow {
+      0% { transform: scaleX(.08); }
+      20% { transform: scaleX(.25); }
+      42% { transform: scaleX(.5); }
+      64% { transform: scaleX(.75); }
+      86%, 100% { transform: scaleX(1); }
+    }
+    @keyframes ready {
+      0%, 84% { opacity: 0; transform: translateY(6px); }
+      88%, 100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+  <rect x="8" y="8" width="884" height="404" rx="22" fill="url(#frame)" stroke="#BD93F9" stroke-width="2"/>
+  <circle cx="34" cy="34" r="6" fill="#FF5555"/>
+  <circle cx="56" cy="34" r="6" fill="#F1FA8C"/>
+  <circle cx="78" cy="34" r="6" fill="#50FA7B"/>
+  <text x="116" y="40" fill="#6272A4" font-size="14" font-family="Menlo, Consolas, monospace">RepoReady terminal</text>
+
+  <text x="44" y="86" fill="#FF79C6" font-size="18" font-family="Menlo, Consolas, monospace">🌸 RepoReady</text>
+  <text x="44" y="112" fill="#8BE9FD" font-size="14" font-family="Menlo, Consolas, monospace">Cute GitHub project assistant</text>
+
+  <text x="44" y="156" fill="#BD93F9" font-size="16" font-family="Menlo, Consolas, monospace">✦ Live Scan</text>
+  <text class="step-1" x="54" y="190" font-size="15" font-family="Menlo, Consolas, monospace">♥ validate GitHub repository</text>
+  <text class="step-2" x="54" y="218" font-size="15" font-family="Menlo, Consolas, monospace">♥ download repository files</text>
+  <text class="step-3" x="54" y="246" font-size="15" font-family="Menlo, Consolas, monospace">♥ inspect project files</text>
+  <text class="step-4" x="54" y="274" font-size="15" font-family="Menlo, Consolas, monospace">♥ compare with your system</text>
+
+  <rect x="54" y="298" width="620" height="18" rx="9" fill="#44475A"/>
+  <rect class="bar" x="54" y="298" width="620" height="18" rx="9" fill="url(#bar)"/>
+
+  <g class="ready">
+    <text x="54" y="352" fill="#50FA7B" font-size="16" font-weight="700" font-family="Menlo, Consolas, monospace">🌸 READY</text>
+    <text x="54" y="380" fill="#F8F8F2" font-size="15" font-family="Menlo, Consolas, monospace">Your system already has everything this repository needs.</text>
+  </g>
+
+  <text x="54" y="398" fill="#6272A4" font-size="14" font-family="Menlo, Consolas, monospace">
+    Do you want me to download this project for you now? [y/N]
+  </text>
+  <rect class="cursor" x="523" y="386" width="8" height="16" fill="#FF79C6"/>
+</svg>
