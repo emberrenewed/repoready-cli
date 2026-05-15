@@ -4,7 +4,7 @@
 
 <p align="center">
   <strong>RepoReady</strong><br>
-  A cute, polished GitHub project scanner for your terminal.<br>
+  Scan a GitHub repo. Learn exactly what your machine is missing. Download only when you are ready.<br>
   <sub>Created by CodeAhmad</sub>
 </p>
 
@@ -12,6 +12,7 @@
   <img alt="Go" src="https://img.shields.io/badge/Go-1.26+-8BE9FD?style=for-the-badge&logo=go&logoColor=282A36">
   <img alt="CLI only" src="https://img.shields.io/badge/CLI-only-BD93F9?style=for-the-badge">
   <img alt="Terminal UI" src="https://img.shields.io/badge/Terminal_UI-Bubble_Tea-FF79C6?style=for-the-badge">
+  <img alt="Safe by default" src="https://img.shields.io/badge/Safe_by_default-confirm_first-F1FA8C?style=for-the-badge">
   <img alt="License" src="https://img.shields.io/badge/Created_by-CodeAhmad-50FA7B?style=for-the-badge">
 </p>
 
@@ -19,19 +20,32 @@
   <img src="assets/repoready-demo.svg" alt="RepoReady animated terminal demo" width="900">
 </p>
 
-## What RepoReady Does
+## Why RepoReady
 
-RepoReady takes a GitHub repository URL, inspects the project files, detects what language and tooling the project needs, compares that against your local machine, and then tells you clearly what is ready and what is missing.
+RepoReady turns a GitHub URL into a clear setup diagnosis inside your terminal. It inspects the repository files, detects the language and tooling the project needs, compares them with your own machine, and tells you plainly what is ready, what is missing, and what should happen next.
 
-If your system is already ready, RepoReady can ask whether you want the project downloaded for you.
+If your machine is already ready, RepoReady can ask whether you want the project downloaded for you. If something is missing, it tells you exactly what language or tool you need before you waste time guessing.
 
-If something is missing, RepoReady tells you:
+## What You Get
 
-- what language the repository uses
-- the evidence it found in the files
-- what your machine already has
-- exactly what you still need to install
-- whether RepoReady can help with the fix
+| Feature | What it gives you |
+| --- | --- |
+| Deep file scan | Reads manifests and source files, not just the repository name |
+| Clear diagnosis | Tells you the detected language, evidence, and missing tools |
+| System comparison | Shows what your computer already has and what it still needs |
+| Safe help flow | Shows commands first and asks before doing anything |
+| Ready-state download | Offers to download the project only after your machine is prepared |
+
+## How It Works
+
+<p align="center">
+  <img src="assets/repoready-flow.svg" alt="RepoReady animated workflow" width="900">
+</p>
+
+1. Paste a GitHub repository link.
+2. RepoReady scans the files and detects the project stack.
+3. It checks your system for the required language and tools.
+4. It explains the missing pieces or offers to download the repo when you are ready.
 
 ## Highlights
 
@@ -96,6 +110,13 @@ If you continue, RepoReady will download it to:
 Do you want me to download this project for you now? [y/N]
 ```
 
+## Perfect For
+
+- Developers opening an unfamiliar repository for the first time
+- Beginners who need a clear answer instead of a wall of setup docs
+- Teams that want a friendlier first-run experience for shared projects
+- Anyone who wants a terminal tool that feels useful and pleasant at the same time
+
 ## Supported Detection
 
 | Area | Supported |
@@ -154,6 +175,7 @@ go test ./...
 - Shell completions
 - More OS-aware repair helpers
 - Release binaries
+- Installable package builds
 
 ---
 
